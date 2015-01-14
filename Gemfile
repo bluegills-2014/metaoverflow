@@ -46,5 +46,5 @@ group :development, :test do
   gem 'shoulda-matchers' , require: false
   gem 'rspec-rails'
   gem 'simplecov', :require  => false
-
+  gem 'ffaker'
 end
