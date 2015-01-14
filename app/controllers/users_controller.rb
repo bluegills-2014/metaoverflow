@@ -4,6 +4,10 @@ class UsersController < ApplicationController
     @users = User.order(:username).limit(50)
   end
 
+  def show
+    @user = User.find(params[:id])
+  end
+
   private
 
   def set_user
