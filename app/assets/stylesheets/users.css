@@ -1,0 +1,17 @@
+/*
+  Place all the styles related to the matching controller here.
+  They will automatically be included in application.css.
+*/
+#userList{
+  width: 95%;
+}
+.userBox{
+  width: 25%;
+}
+.userBox ul{
+  list-style-type: none;
+}
+.userBox img{
+  float: left;
+  width: 112px;
+}

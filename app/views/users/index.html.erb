@@ -1,0 +1,14 @@
+<h1> User List </h1>
+
+<div id="userList">
+
+    <% @users.each do |user| %>
+    <div class="userBox">
+      <%=  image_tag "pajama_man.jpg"%>
+      <ul>
+        <li><%= user.username %></li>
+        <li><%= user.location %></li>
+      </ul>
+    </div>
+    <% end %>
+</div>
