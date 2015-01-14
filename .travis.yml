@@ -1,0 +1,7 @@
+language: ruby
+rvm:
+  - 2.0.0
+addons:
+  postgresql: "9.3"
+before script:
+  - psql -c 'create database metaoverflow_test;' -U postgres
