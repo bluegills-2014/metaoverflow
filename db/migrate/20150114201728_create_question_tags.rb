@@ -1,4 +1,4 @@
-class CreateQuestionTagsJoinTable < ActiveRecord::Migration
+class CreateQuestionTags < ActiveRecord::Migration
   def change
     create_table :question_tags do |t|
       belongs_to :question
