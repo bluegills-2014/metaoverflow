@@ -45,5 +45,6 @@ gem 'factory_girl_rails'
 group :development, :test do
   gem 'shoulda-matchers' , require: false
   gem 'rspec-rails'
+  gem 'simplecov', :require  => false
 
 end
