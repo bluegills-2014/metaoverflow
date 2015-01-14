@@ -1,15 +1,83 @@
-10.times do
-  user = User.create!(username: Faker::Name.name, password_digest: "test", email: Faker::Internet.email, location: Faker::Address.city, age: rand(15..99), bio: Faker::Lorem.paragraph, avatar: 'fuckit', date: Time.now)
-  question = Question.create!(title: Faker::Lorem.sentence, content: Faker::Lorem.paragraph(2), posted_at: Faker::Date.backward(14), user_id: user.id)
-  answer = Answer.create!(content: Faker::Lorem.paragraph(1), user_id: user.id, question_id: question.id, posted_at: Faker::Date.backward(14), best: false)
-  tag = Tag.create!(word: Faker::Lorem.word)
-  QuestionTags.create!(tag_id: tag.id, question_id: question.id)
+require 'ffaker'
+
+# create users
+users = rand(5..15).times.map do
+  User.create!({
+    username: Faker::Name.name,
+    password: "password",
+    password_confirmation: "password",
+    email: Faker::Internet.email,
+    location: Faker::Address.city,
+    age: rand(15..99),
+    bio: Faker::Lorem.paragraph,
+    avatar: rand(1..10).to_s,
+    registered_at: Faker::Time.date
+  })
+end
+# create questions
+questions = 5.times.map do
+  users.sample.questions.create!({
+    title: Faker::Lorem.sentence,
+    content: Faker::Lorem.paragraph(2),
+    posted_at: Faker::Time.date
+  })
 end
 
-10.times do
-  tag_type = ['question', 'answer'].sample
-  vote_type = ['question', 'answer', 'response'].sample
-  id = rand(1..10)
-  response = Response.create!(content: Faker::Lorem.sentence, posted_at: Faker::Date.backward(14), respondable_id: id, responable_type: tag_type)
-  vote = Vote.create!(votable_id: id, votable_type: vote_type)
+# create answers for each question
+answers = 30.times.map do
+  questions.sample.answers.create!({
+    content: Faker::Lorem.paragraph(1),
+    user: users.sample,
+    posted_at: Faker::Time.date,
+    best: false
+  })
 end
+bests = questions.map {|q| q.answers.sample}.sample(3).each {|q| q.update(best: true) }
+
+# create tags for each question
+20.times do
+  questions.sample.tags.create!(word: Faker::Lorem.word)
+end
+
+# create responses for some questions and answers
+respondables = [questions, answers].flatten
+responses = 20.times.map do
+  respondables.sample.responses.create!(content: Faker::Lorem.sentence, posted_at: Faker::Time.date, user: users.sample)
+end
+respondables += responses
+
+# create votes for everything that should be voted on
+respondables.each do |item|
+  rand(1..5).times do
+    item.votes.create!(user: users.sample)
+  end
+end
+
+# 10.times do
+#   date = Time.now + rand(1..10)
+#   user = User.create!(username: Faker::Name.name, password_digest: "test", email: Faker::Internet.email, location: Faker::Address.city, age: rand(15..99), bio: Faker::Lorem.paragraph, avatar: rand(1..10).to_s, registered_at: Time.now)
+#   question = user.questions.create!(title: Faker::Lorem.sentence, content: Faker::Lorem.paragraph(2), posted_at: date)
+#   answer = user.answers.create!(content: Faker::Lorem.paragraph(1), question: question, posted_at: date, best: false)
+#   question.tags.create!(word: Faker::Lorem.word)
+# end
+
+# [Question, Answer, Response].each do |object_type|
+#   object_type.all.each do |item|
+#     unless object_type == Response
+#       rand(3).times do
+#         item.responses.create!(content: Faker::Lorem.sentence, posted_at: Time.now - rand(10).days, user: User.all.sample)
+#       end
+#     end
+#     rand(1..5).times do
+#       item.votes.create!(user: User.all.sample)
+#     end
+#   end
+# end
+
+# 10.times do
+#   date = Time.now + rand(1..10)
+#   tag_type = ['Question', 'Answer'].sample
+#   vote_type = ['Question', 'Answer', 'Response'].sample
+#   id = rand(1..10)
+#   vote = Vote.create!(user_id: rand(1..10), votable_id: id, votable_type: vote_type)
+# end
