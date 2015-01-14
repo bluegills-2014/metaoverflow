@@ -6,3 +6,4 @@ class CreateQuestionTags < ActiveRecord::Migration
     end
   end
 end
+
