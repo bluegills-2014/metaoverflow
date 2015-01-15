@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+ruby '2.0.0'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -32,6 +33,9 @@ gem 'bcrypt', '~> 3.1.7'
 # Use unicorn as the app server
 # gem 'unicorn'
 
+# User newrelic_rpm
+gem 'newrelic_rpm'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
@@ -40,6 +44,9 @@ gem 'bcrypt', '~> 3.1.7'
 
 # Use factory girl
 gem 'factory_girl_rails'
+
+#Use rails_12factor
+gem 'rails_12factor'
 
 #development and test
 group :development, :test do
