@@ -1,0 +1,21 @@
+/*
+  Place all the styles related to the matching controller here.
+  They will automatically be included in application.css.
+*/
+#user-list{
+  width: 95%;
+}
+.user-box{
+  width: 25%;
+}
+.user-box ul{
+  list-style-type: none;
+}
+.user-box img{
+  float: left;
+  width: 100px;
+}
+
+.user-profile img{
+  width:  200px;
+}
