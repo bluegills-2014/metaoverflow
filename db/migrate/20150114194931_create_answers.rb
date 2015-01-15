@@ -1,13 +1,16 @@
 class CreateAnswers < ActiveRecord::Migration
   def change
     create_table :answers do |t|
-      t.belongs_to :question
-      t.belongs_to :user
+      t.references :question, index: true
+      t.references :user, index: true
       t.text :content
       t.boolean :best
       t.datetime :posted_at
 
       t.timestamps
     end
+
+    add_index :answers, [:question_id, :user_id]
+    add_index :answers, :user_id
   end
 end

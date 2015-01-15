@@ -1,7 +1,7 @@
 class CreateResponses < ActiveRecord::Migration
   def change
     create_table :responses do |t|
-      t.belongs_to :user
+      t.references :user, index: true
       t.text :content
       t.datetime :posted_at
       t.references :respondable, polymorphic: true, index: true
@@ -9,6 +9,6 @@ class CreateResponses < ActiveRecord::Migration
       t.timestamps
     end
 
-    add_index :responses, :respondable_id
+    add_index :responses, :respondable_id # Do we need this with index: true on line 7?
   end
 end
