@@ -5,6 +5,6 @@ class Response < ActiveRecord::Base
   has_many :votes, as: :votable
   belongs_to :user
 
-  validates :content, :user_id, presence: true
+  validates :content, :user_id, :respondable_id, presence: true
   validates :content, length: { maximum: 10000 }
 end
