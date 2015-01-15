@@ -43,15 +43,13 @@ gem 'newrelic_rpm'
 # gem 'debugger', group: [:development, :test]
 
 # Use factory girl
-gem 'factory_girl_rails'
+# gem 'factory_girl_rails'
 
 #Use rails_12factor
-gem 'rails_12factor'
+gem 'rails_12factor', group: :production
 
-#development and test
-group :development, :test do
-  gem 'shoulda-matchers' , require: false
-  gem 'rspec-rails'
-  gem 'simplecov', :require  => false
-  gem 'ffaker'
-end
+
+gem 'shoulda-matchers' , group: [:development, :test], require: false
+gem 'rspec-rails', group: [:development, :test]
+gem 'simplecov',group: [:development, :test], :require  => false
+gem 'ffaker', group: [:development, :test]
