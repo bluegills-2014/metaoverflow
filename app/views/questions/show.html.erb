@@ -1,13 +1,11 @@
 <% content_for :title, @question.title %>
 
-<%= link_to 'Questions index', questions_path %>
-</section>
 <section id='show-question' class='question'>
   <h2>
     <%= @question.title + "?" %>
   </h2>
   <h4>
-    Asked by <%= link_to @question.user.username, @question.user %>, <%= @question.posted_at %>
+    Asked by <%= link_to @question.user.username, @question.user %>, <%= format_date(@question.posted_at) %>
   </h4>
   <div>
     <p class='question-content'><%= @question.content %></p>
@@ -22,7 +20,7 @@
         <p>
           <%= response.content %>
         </p>
-        <h5>Response by <%= response.user.username %>, <%= response.posted_at %></h5>
+        <h5>Response by <%= response.user.username %>, <%= format_date(response.posted_at) %></h5>
       </li>
     <%end%>
   </ul>
@@ -30,13 +28,13 @@
 <section id='show-answers' class='answers'>
   <% @question.answers.each do |answer|  %>
     <%= answer.content %>
-    <h5> Answer by <%= answer.user.username %>, <%= answer.posted_at%></h5>
+    <h5> Answer by <%= answer.user.username %>, <%= format_date(answer.posted_at)%></h5>
     <ul>
       <% answer.responses.each do |response| %>
       <li class='response'>
         <p>
           <%= response.content%>
-          Response by <%= response.user.username %>, <%= response.posted_at %>
+          Response by <%= response.user.username %>, <%= format_date(response.posted_at) %>
         </p>
       </li>
       <%end%>
