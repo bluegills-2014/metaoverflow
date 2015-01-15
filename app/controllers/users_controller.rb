@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :update, :destroy, :edit]
+  before_action :set_user, only: [:show, :update]
   def index
     @users = User.order(:username).limit(50)
   end
