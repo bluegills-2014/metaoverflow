@@ -8,7 +8,7 @@ class CreateUsers < ActiveRecord::Migration
       t.integer :age
       t.text :bio
       t.string :avatar
-      t.date :registered_at
+      t.datetime :registered_at
 
       t.timestamps
     end

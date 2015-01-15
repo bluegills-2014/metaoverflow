@@ -1,0 +1,12 @@
+<% content_for :title, "Questions Index" %>
+
+<section id='show-questions-index'>
+  <% @questions.each do |question| %>
+    <h3><%= link_to question.title, question %></h3>
+    <span><%= question.content %></span>
+    <h5>
+      Asked by <%= link_to question.user.username %><!-- can't link to users without user routing --> <%= question.posted_at %>
+    </h5>
+    Answers: <%= question.answers.count %> | Responses: <%= question.responses.count %>
+  <% end %>
+</section>

@@ -3,7 +3,7 @@ class CreateResponses < ActiveRecord::Migration
     create_table :responses do |t|
       t.belongs_to :user
       t.text :content
-      t.date :posted_at
+      t.datetime :posted_at
       t.references :respondable, polymorphic: true, index: true
 
       t.timestamps
