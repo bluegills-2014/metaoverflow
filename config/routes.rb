@@ -9,7 +9,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :users, only: [:index, :show, :new]
+  resources :users, only: [:index, :show, :new, :create]
 
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'

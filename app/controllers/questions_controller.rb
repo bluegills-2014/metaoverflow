@@ -14,8 +14,9 @@ class QuestionsController < ApplicationController
 
   def create
     @question = Question.new(question_params)
+    @question.user_id = session[:user_id]
     if @question.save
-      redirect_to action: questions_path # Not sure if correct path?
+      redirect_to @question
     else
       render 'new' # Need to flash errors here
     end
