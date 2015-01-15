@@ -6,6 +6,8 @@ class Question < ActiveRecord::Base
   has_many :votes, as: :votable
   has_many :responses, as: :respondable
 
+  validates :user_id, presence: true
+
   def set_posted_at
     self.posted_at = self.created_at
     self.save
