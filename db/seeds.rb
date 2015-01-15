@@ -15,7 +15,7 @@ users = rand(5..15).times.map do
   })
 end
 # create questions
-questions = 5.times.map do
+questions = 10.times.map do
   users.sample.questions.create!({
     title: Faker::Lorem.sentence,
     content: Faker::Lorem.paragraph(2),
@@ -42,7 +42,7 @@ end
 
 # create responses for some questions and answers
 respondables = [questions, answers].flatten
-responses = 20.times.map do
+responses = 50.times.map do
   respondables.sample.responses.create!(content: Faker::Lorem.sentence, posted_at: Faker::Time.date, user: users.sample)
 end
 respondables += responses
