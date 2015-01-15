@@ -10,4 +10,8 @@ class User < ActiveRecord::Base
   validates_format_of :email,:with => /\A[^@\s]+@([^@\s]+\.)+[^@\s]+\z/
 
   has_secure_password
+
+  def to_param
+    username
+  end
 end
