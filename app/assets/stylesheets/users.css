@@ -2,16 +2,16 @@
   Place all the styles related to the matching controller here.
   They will automatically be included in application.css.
 */
-#userList{
+#user-list{
   width: 95%;
 }
-.userBox{
+.user-box{
   width: 25%;
 }
-.userBox ul{
+.user-box ul{
   list-style-type: none;
 }
-.userBox img{
+.user-box img{
   float: left;
   width: 100px;
 }
