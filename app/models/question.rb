@@ -6,9 +6,10 @@ class Question < ActiveRecord::Base
   has_many :votes, as: :votable
   has_many :responses, as: :respondable
 
-  validates :user_id, presence: true
-  validates :title, presence: true, length: { maximum: 90, minimum: 6 }
-  validates :content, presence: true, uniqueness: true, length: { maximum: 5000, minimum: 10 }
+  validates :title, :content, :user_id, presence: true
+  validates :title, uniqueness: true
+  validates :title, length: { maximum: 90 }
+  validates :content, length: { maximum: 10000 }
 
   def set_posted_at
     self.posted_at = self.created_at

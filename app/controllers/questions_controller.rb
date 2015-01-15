@@ -1,10 +1,10 @@
 class QuestionsController < ApplicationController
+  before_action :set_question, only: [:show, :update, :destroy, :edit]
   def index
     @questions = Question.order(:posted_at).limit(25) # Come back and implement pagination?
   end
 
   def show
-    @question = Question.find(params[:id])
   end
 
   def new
@@ -15,17 +15,30 @@ class QuestionsController < ApplicationController
     @question = Question.new(question_params)
     if @question.save
       @question.set_posted_at
-      redirection_to action: questions_path # Not sure if correct path?
+      redirect_to action: questions_path # Not sure if correct path?
     else
       render 'new' # Need to flash errors here
     end
   end
 
-  def edit
+  def update
+    if @question.update(question_params)
+      redirect_to @question, notice: 'Question was updated successfully."'
+    else
+      render :edit
+    end
+  end
 
+  def destroy
+    @question.destroy
+    redirect_to root_path
   end
 
   private
+
+  def set_question
+    @question = Question.find(params[:id])
+  end
 
   def question_params # Gonna have to add more stuff here
     # Have to add current_user.id
