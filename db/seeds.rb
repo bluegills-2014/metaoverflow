@@ -16,9 +16,10 @@ users = rand(5..15).times.map do
 end
 # create questions
 questions = 10.times.map do
+  length = rand(2..20)
   users.sample.questions.create!({
     title: Faker::Lorem.sentence,
-    content: Faker::Lorem.paragraph(2),
+    content: Faker::Lorem.paragraph(length),
   })
 end
 
