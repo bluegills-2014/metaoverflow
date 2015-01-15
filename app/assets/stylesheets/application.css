@@ -13,6 +13,10 @@
  *= require_tree .
  *= require_self
  */
+* {
+  font-family: Helvetica;
+  box-sizing: border-box;
+}
 section {
   margin: 0 auto auto;
   width: 75%;
@@ -26,4 +30,12 @@ h5 {
 }
 p {
   margin: 8px 6px 6px 4px;
+}
+
+/* Nav bar */
+nav {
+  padding: 4px;
+  text-align: right;
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
 }
