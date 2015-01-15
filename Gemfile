@@ -49,7 +49,7 @@ gem 'newrelic_rpm'
 gem 'rails_12factor', group: :production
 
 
-gem 'shoulda-matchers' , group: [:development, :test] require: false
+gem 'shoulda-matchers' , group: [:development, :test], require: false
 gem 'rspec-rails', group: [:development, :test]
 gem 'simplecov',group: [:development, :test], :require  => false
 gem 'ffaker', group: [:development, :test]
