@@ -14,7 +14,7 @@ class QuestionsController < ApplicationController
   def create
     @question = Question.new(question_params)
     if @question.save
-      @question.set_posted_at
+      # @question.set_posted_at
       redirect_to action: questions_path # Not sure if correct path?
     else
       render 'new' # Need to flash errors here
