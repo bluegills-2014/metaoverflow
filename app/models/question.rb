@@ -10,7 +10,6 @@ class Question < ActiveRecord::Base
   validates :title, presence: true, length: { maximum: 90, minimum: 6 }
   validates :content, presence: true, uniqueness: true, length: { maximum: 5000, minimum: 10 }
 
-
   def set_posted_at
     self.posted_at = self.created_at
     self.save
@@ -22,9 +21,9 @@ class Question < ActiveRecord::Base
 
   def first(number)
     if self.content.length > number
-      self.content[0..number] + "<a id=\"continueReading\" href='/blogs/#{self.id}'>...continue reading</a>"
+      (self.content[0..number] + " <a href='/questions/#{self.id}'>...continue reading</a>").html_safe
     else
-      self.content
+      self.content.html_safe
     end
   end
 end
