@@ -13,5 +13,9 @@
 }
 .userBox img{
   float: left;
-  width: 112px;
+  width: 100px;
+}
+
+.user-profile img{
+  width:  200px;
 }
