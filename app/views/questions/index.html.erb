@@ -1,0 +1,7 @@
+<% content_for :title, "Questions Index" %>
+
+<% @questions.each do |question| %>
+  <h3><%= question.title %></h3>
+  <span><%= question.content %></span>
+  <span>Posted by <%= question.user.username %> <%= question.posted_at %>
+<% end %>

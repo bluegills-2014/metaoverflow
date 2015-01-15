@@ -10,4 +10,8 @@ class Question < ActiveRecord::Base
     self.posted_at = self.created_at
     self.save
   end
+
+  def posted_at
+    super.strftime("on %m/%d/%Y at %I:%M%p")
+  end
 end

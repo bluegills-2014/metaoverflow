@@ -19,9 +19,10 @@ questions = 5.times.map do
   users.sample.questions.create!({
     title: Faker::Lorem.sentence,
     content: Faker::Lorem.paragraph(2),
-    posted_at: Faker::Time.date
   })
 end
+
+questions.each { |question| question.set_posted_at }
 
 # create answers for each question
 answers = 30.times.map do
