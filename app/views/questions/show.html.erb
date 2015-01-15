@@ -1,8 +1,7 @@
 <% content_for :title, @question.title %>
 
-<%= link_to 'Questions index', questions_path %>
-</section>
 <section id='show-question' class='question'>
+<%= link_to 'Questions index', questions_path %>
   <h2>
     <%= @question.title + "?" %>
   </h2>
