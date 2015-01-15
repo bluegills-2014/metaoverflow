@@ -13,3 +13,17 @@
  *= require_tree .
  *= require_self
  */
+section {
+  margin: 0 auto auto;
+  width: 75%;
+}
+div {
+  /*padding: 8px 4px 4px 2px;*/
+}
+h5 {
+  margin: 6px 4px 6px 4px;
+  font-weight: normal;
+}
+p {
+  margin: 8px 6px 6px 4px;
+}
