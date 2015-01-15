@@ -15,10 +15,23 @@ class QuestionsController < ApplicationController
     @question = Question.new(question_params)
     if @question.save
       @question.set_posted_at
-      redirection_to action: questions_path # Not sure if correct path?
+      redirect_to action: questions_path # Not sure if correct path?
     else
       render 'new' # Need to flash errors here
     end
+  end
+
+  def update
+    if @question.update(question_params)
+      redirect_to @question, notice: 'Question was updated successfully."'
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @question.destroy
+    redirect_to root_path
   end
 
   private
