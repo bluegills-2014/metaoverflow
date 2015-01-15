@@ -1,5 +1,7 @@
 <% content_for :title, @question.title %>
-
+<nav>
+  <%= link_to 'Back to questions', questions_path %>
+</nav>
 <section id='show-question' class='question'>
   <h2>
     <%= @question.title + "?" %>
