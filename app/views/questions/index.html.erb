@@ -5,7 +5,7 @@
     <h3><%= link_to question.title, question %></h3>
     <span><%= question.first(200) %></span>
     <h5>
-      Asked by <%= link_to question.user.username %><!-- can't link to users without user routing --> <%= question.posted_at %>
+      Asked by <%= link_to question.user.username, question.user %> <%= question.posted_at %>
     </h5>
     Answers: <%= question.answers.count %> | Responses: <%= question.responses.count %>
   <% end %>

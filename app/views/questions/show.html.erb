@@ -7,7 +7,7 @@
     <%= @question.title + "?" %>
   </h2>
   <h4>
-    Asked by <%= @question.user.username %>, <%= @question.posted_at %>
+    Asked by <%= link_to @question.user.username, @question.user %>, <%= @question.posted_at %>
   </h4>
   <div>
     <p class='question-content'><%= @question.content %></p>
