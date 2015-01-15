@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 20150114215018) do
     t.integer  "user_id"
     t.text     "content"
     t.boolean  "best"
-    t.date     "posted_at"
+    t.datetime "posted_at"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(version: 20150114215018) do
   create_table "questions", force: true do |t|
     t.string   "title"
     t.text     "content"
-    t.date     "posted_at"
+    t.datetime "posted_at"
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -43,7 +43,7 @@ ActiveRecord::Schema.define(version: 20150114215018) do
   create_table "responses", force: true do |t|
     t.integer  "user_id"
     t.text     "content"
-    t.date     "posted_at"
+    t.datetime "posted_at"
     t.integer  "respondable_id"
     t.string   "respondable_type"
     t.datetime "created_at"
@@ -67,7 +67,7 @@ ActiveRecord::Schema.define(version: 20150114215018) do
     t.integer  "age"
     t.text     "bio"
     t.string   "avatar"
-    t.date     "registered_at"
+    t.datetime "registered_at"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

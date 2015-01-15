@@ -5,7 +5,7 @@ class CreateAnswers < ActiveRecord::Migration
       t.belongs_to :user
       t.text :content
       t.boolean :best
-      t.date :posted_at
+      t.datetime :posted_at
 
       t.timestamps
     end
