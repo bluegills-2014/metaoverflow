@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :questions do
     resources :responses
     resources :answers do
-      resources :responses
+    resources :responses
     end
   end
 
