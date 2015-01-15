@@ -1,5 +1,6 @@
 class QuestionsController < ApplicationController
   before_action :set_question, only: [:show, :update, :destroy, :edit]
+
   def index
     @questions = Question.order(:posted_at).limit(25) # Come back and implement pagination?
   end

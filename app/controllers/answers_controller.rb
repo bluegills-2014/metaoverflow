@@ -1,6 +1,4 @@
 class AnswersController < ApplicationController
-# before_action :set_answer, only: [:new, :show, :update, :destroy, :edit]
-
   def index
   end
 
