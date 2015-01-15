@@ -13,45 +13,5 @@
  *= require_tree .
  *= require_self
  */
-* {
-  font-family: Helvetica;
-  box-sizing: border-box;
-}
 
-section {
-  margin: 10px auto auto;
-  width: 75%;
-}
-h1 {
-  display: inline-block;
-  margin: 0;
-  padding: 0;
-}
-h5 {
-  margin: 6px 4px 6px 4px;
-  font-weight: normal;
-}
-p {
-  margin: 8px 6px 6px 4px;
-}
-
-/* Nav bar */
-
-header {
-  float: left;
-  margin: 6px 0 26px 0;
-  padding: 6px 20px 6px 20px;
-  width: 100%;
-  border-top: 4px solid black;
-  border-bottom: 4px solid black;
-}
-header > nav {
-  float: right;
-  padding: 10px 0 10px 0;
-  text-align: right;
-}
-nav {
-  margin: 0 auto auto;
-  width: 75%;
-}
 
