@@ -27,7 +27,8 @@ class QuestionsController < ApplicationController
 
   private
 
-  def question_params
+  def question_params # Gonna have to add more stuff here
+    # Have to add current_user.id
     params.require(:question).permit(:title, :content)
   end
 end
