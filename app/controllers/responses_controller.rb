@@ -7,6 +7,12 @@ class ResponsesController < ApplicationController
   end
 
   def create
+    @response = Response.new(params_answer)
+    if @response.save
+      redirect_to @question
+    else
+      render 'new'
+    end
   end
 
   def update
@@ -32,7 +38,8 @@ class ResponsesController < ApplicationController
     if @answer
       params.require(:answer).permit(:content).merge(respondable_id: @answer.id, respondable_type: 'Answer', user_id: current_user.id)
     else
-      params.require(:answer).permit(:content).merge(respondable_id: @question.id, respondable_type: 'Question', user_id: current_user.id)
+      params.require(:answer).permit(:content).merge(respondable_id: @question.id,
+        respondable_type: 'Question', user_id: current_user.id)
     end
   end
 end
