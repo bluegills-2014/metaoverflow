@@ -11,8 +11,49 @@ RSpec.describe UsersController, :type => :controller do
     it{ expect(new).to render_template('users/new')}
   end
 
-  # describe 'Get #show' do
-  #   before {get :show}
-  #   it{ should render_template('users/show')}
-  # end
+  describe 'Post #create' do
+    describe "valid data" do
+      let(:user){{
+        username: Faker::Name.name,
+        password: "password",
+        password_confirmation: "password",
+        email: Faker::Internet.email,
+        location: Faker::Address.city,
+        age: rand(15..99),
+        bio: Faker::Lorem.paragraph,
+        avatar: rand(1..10).to_s,
+        registered_at: Faker::Time.date
+        }}
+        context "User saves on create" do
+          it{expect(post :create, user: user).to change(User,:count).by(1)}
+        end
+        context "redirect to new user" do
+          it{expect(post :create, user: user).to redirect_to User.last}
+        end
+    end
+
+
+    describe "invalid data" do
+      let(:user){{
+        username: nil,
+        password: "password",
+        password_confirmation: "password",
+        email: Faker::Internet.email,
+        location: Faker::Address.city,
+        age: rand(15..99),
+        bio: Faker::Lorem.paragraph,
+        avatar: rand(1..10).to_s,
+        registered_at: Faker::Time.date
+        }}
+
+        context "User does not saves on create with invalid attribude" do
+          it{expect(post :create, user:user).to_not change(User,:count).by(1)}
+        end
+
+        context "rerednder new user form" do
+          it{expect(post :create, user: user).to render_template('users/new')}
+        end
+
+    end
+  end
 end
