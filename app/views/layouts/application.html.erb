@@ -7,10 +7,9 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <span background-color='red'>^ baller space v</span>
   <header>
-    <h1>Metaoverflow</h1>
     <nav>
+      <%= image_tag "logo.png", class: 'header-image' %>
       <%= link_to 'See latest questions', questions_path %>
       <% if current_user %>
       <% else %>
