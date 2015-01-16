@@ -1,9 +1,8 @@
 Rails.application.routes.draw do
   root 'questions#index'
 
-  # resources :responses #testing
-
   resources :questions do
+    post '/vote' => 'votes#vote_handler'
     resources :responses
     resources :answers do
       resources :responses
@@ -23,6 +22,7 @@ Rails.application.routes.draw do
     resources :responses
     resources :questions
   end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

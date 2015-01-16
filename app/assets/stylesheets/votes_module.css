@@ -1,0 +1,6 @@
+.votes {
+  display: inline-block;
+}
+.upvoted {
+  color: #ff934c;
+}

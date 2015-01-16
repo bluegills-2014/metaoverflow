@@ -2,16 +2,19 @@
 <section id='show-questions-index'>
   <h2>RECENT QUESTIONS </h2>
   <% @questions.each do |question| %>
-    <h3><%= link_to question.title, question %></h3>
-    <span><%= truncate_content(question, 200) %></span>
-    <h5>
-      Asked by <%= link_to question.user.username, question.user %> <%= format_date(question.posted_at) %>
-
-    </h5>
-    Answers: <%= question.answers.count %> |
-    Responses: <%= question.responses.count %> |
-    Tags: <% question.tags.each do |tag| %>
-      <%= tag.word %>
-    <% end %>
+<<<<<<< HEAD
+    <section class='question'>
+        <h3><%= link_to question.title, question %></h3>
+      <span><%= truncate_content(question, 200) %></span>
+      <h5>
+        Asked by <%= link_to question.user.username, question.user %> <%= format_date(question.posted_at) %>
+      </h5>
+      <a id='<%= question.id %>' class='vote-arrow  <%= current_user_upvoted(question) %>' href='#'>&#9650</a>Upvotes: <span id='<%= question.id %>-vote-count'><%= question.votes.count %></span> |
+      Answers: <%= question.answers.count %> |
+      Responses: <%= question.responses.count %> |
+      Tags: <% question.tags.each do |tag| %>
+        <%= tag.word %>
+      <% end %>
+    </section>
   <% end %>
 </section>
