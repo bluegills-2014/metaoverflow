@@ -27,4 +27,10 @@ RSpec.describe Question, :type => :model do
       # it { expect(question).to validate_length_of(:content).is_at_most(10000) }
     end
   end
+
+  describe "checks inclusion of posted at module" do
+    it "checks set posted at method" do
+      expect(question.set_posted_at.to_date).to eq(Time.now.to_date)
+    end
+  end
 end
