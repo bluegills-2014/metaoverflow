@@ -1,5 +1,5 @@
 <% content_for :title, @question.title %>
-<a id='<%= @question.id %>' class='vote-arrow <%= current_user_upvoted(@question) %>' href='#'>&#9650</a>Upvotes: <span id='<%= @question.id %>-vote-count'><%= @question.votes.count %></span>
+<a id='<%= @question.id %>' class='vote-arrow <%= current_user_upvoted(@question) if logged_in? %>' href='#'>&#9650</a>Upvotes: <span id='<%= @question.id %>-vote-count'><%= @question.votes.count %></span>
 <nav>
   <%= link_to 'Give Answer', new_question_answer_path(@question.id), id: 'but' %>
 </nav>
