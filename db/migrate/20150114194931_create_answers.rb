@@ -11,6 +11,5 @@ class CreateAnswers < ActiveRecord::Migration
     end
 
     add_index :answers, [:question_id, :user_id]
-    add_index :answers, :user_id
   end
 end

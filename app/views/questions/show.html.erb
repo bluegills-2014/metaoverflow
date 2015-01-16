@@ -1,6 +1,7 @@
 <% content_for :title, @question.title %>
 <nav>
   <%= link_to 'Back to questions', questions_path %>
+  <%= link_to 'Answer this question', new_question_answer_path(@question.id) %>
 </nav>
 <section id='show-question' class='question'>
   <h2>

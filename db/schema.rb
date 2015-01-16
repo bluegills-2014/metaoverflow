@@ -26,10 +26,17 @@ ActiveRecord::Schema.define(version: 20150114215018) do
     t.datetime "updated_at"
   end
 
+  add_index "answers", ["question_id", "user_id"], name: "index_answers_on_question_id_and_user_id", using: :btree
+  add_index "answers", ["question_id"], name: "index_answers_on_question_id", using: :btree
+  add_index "answers", ["user_id"], name: "index_answers_on_user_id", using: :btree
+
   create_table "question_tags", force: true do |t|
     t.integer "question_id"
     t.integer "tag_id"
   end
+
+  add_index "question_tags", ["question_id", "tag_id"], name: "index_question_tags_on_question_id_and_tag_id", using: :btree
+  add_index "question_tags", ["tag_id"], name: "index_question_tags_on_tag_id", using: :btree
 
   create_table "questions", force: true do |t|
     t.string   "title"
@@ -39,6 +46,8 @@ ActiveRecord::Schema.define(version: 20150114215018) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "questions", ["user_id"], name: "index_questions_on_user_id", using: :btree
 
   create_table "responses", force: true do |t|
     t.integer  "user_id"
@@ -52,6 +61,7 @@ ActiveRecord::Schema.define(version: 20150114215018) do
 
   add_index "responses", ["respondable_id", "respondable_type"], name: "index_responses_on_respondable_id_and_respondable_type", using: :btree
   add_index "responses", ["respondable_id"], name: "index_responses_on_respondable_id", using: :btree
+  add_index "responses", ["user_id"], name: "index_responses_on_user_id", using: :btree
 
   create_table "tags", force: true do |t|
     t.string   "word"
@@ -80,6 +90,7 @@ ActiveRecord::Schema.define(version: 20150114215018) do
     t.datetime "updated_at",   null: false
   end
 
+  add_index "votes", ["user_id"], name: "index_votes_on_user_id", using: :btree
   add_index "votes", ["votable_id", "votable_type"], name: "index_votes_on_votable_id_and_votable_type", using: :btree
   add_index "votes", ["votable_id"], name: "index_votes_on_votable_id", using: :btree
 
