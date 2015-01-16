@@ -1,6 +1,6 @@
 <section class='generic-section'>
   <h2><%= yield(:title) %></h2>
-  <%= form_for @user, :url => edit_admin_user_path do |f| %>
+  <%= form_for [:admin,@user] do |f| %>
     <%= f.label :username %>
     <%= f.text_field :username %>
     <%= f.label :email %>
