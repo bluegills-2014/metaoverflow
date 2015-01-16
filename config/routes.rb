@@ -2,8 +2,7 @@ Rails.application.routes.draw do
   root 'questions#index'
 
   resources :questions do
-    post '/upvote' => 'votes#create'
-    post '/downvote' => 'votes#destroy'
+    post '/vote' => 'votes#vote_handler'
     resources :responses
     resources :answers do
       resources :responses

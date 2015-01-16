@@ -9,11 +9,7 @@ $('document').ready(function() {
     e.preventDefault()
     var questionId = this.id
     console.log($(this).attr("class"))
-    if ($(this).attr("class") == 'vote-arrow upvoted') {
-      var url = '/questions/' + questionId + '/downvote'
-    } else {
-      var url = '/questions/' + questionId + '/upvote'
-    }
+    var url = '/questions/' + questionId + '/vote'
     var request = $.ajax({
       url: url,
       method: "post",
