@@ -8,7 +8,7 @@
       <h5>
         Asked by <%= link_to question.user.username, question.user %> <%= format_date(question.posted_at) %>
       </h5>
-      <a href='#'>&#9650</a>Upvotes: <%= question.votes.count %> |
+      <a id='<%= question.id %>' class='vote-arrow' href='#'>&#9650</a>Upvotes: <span id='<%= question.id %>-vote-count'><%= question.votes.count %></span> |
       Answers: <%= question.answers.count %> |
       Responses: <%= question.responses.count %> |
       Tags: <% question.tags.each do |tag| %>
