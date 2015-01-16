@@ -1,7 +1,7 @@
 class ResponsesController < ApplicationController
   before_action :check_if_answer
   before_action :set_question, only: [:edit, :new, :create, :destroy]
-
+  before_action :authenticate_user, only: [:create, :new]
 
   def new
     @response = Response.new
@@ -18,6 +18,7 @@ class ResponsesController < ApplicationController
 
   def update
   end
+
 
   def edit
   end
