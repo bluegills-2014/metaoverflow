@@ -12,7 +12,6 @@ class AnswersController < ApplicationController
   def create
     @answer = Answer.new(params_answer)
     if @answer.save
-      @answer.set_posted_at
       redirect_to @question
     else
       render 'new' # Need to flash errors here
