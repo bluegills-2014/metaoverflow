@@ -2,13 +2,13 @@
 
 <div id="user-list">
 
-    <% @users.each do |user| %>
+  <% @users.each do |user| %>
     <div class="user-box">
       <%=  image_tag "pajama_man.jpg"%>
       <ul>
-        <li><%= user.username %></li>
+        <li><%= link_to user.username, user %></li>
         <li><%= user.location %></li>
       </ul>
     </div>
-    <% end %>
+  <% end %>
 </div>
