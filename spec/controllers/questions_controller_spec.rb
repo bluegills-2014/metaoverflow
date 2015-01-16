@@ -2,8 +2,8 @@ require 'rails_helper'
 
 RSpec.describe QuestionsController, :type => :controller do
   describe "Get #index" do
-    before {get :index}
-    it{should render_template("questions/index")}
+    let(:index) {get :index}
+    it{expect(index).to render_template("questions/index")}
   end
 
   # describe 'GET#show' do
