@@ -11,7 +11,6 @@ RSpec.describe User, :type => :model do
 
   describe "validate uniqueness" do
     it { expect(user).to validate_uniqueness_of(:username) }
-    it { expect(user).to validate_uniqueness_of(:slug) }
   end
 
   describe "checks associations" do

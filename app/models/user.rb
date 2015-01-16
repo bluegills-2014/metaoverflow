@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
 
   validates :username, uniqueness: true, presence: true
 
-  validates :slug, uniqueness: true, presence: true
+  validates :slug, uniqueness: true
   validates :email, presence: true
   validates_format_of :email,:with => /\A[^@\s]+@([^@\s]+\.)+[^@\s]+\z/
   # validates_format_of :username, :without => /[^!@#$%^&*()]/
