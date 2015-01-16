@@ -5,6 +5,7 @@ class ResponsesController < ApplicationController
   private
 
   def check_if_answer
+  end
 
   def set_question
     @question = Question.find(params[:question_id])
