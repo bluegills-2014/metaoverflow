@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   # resources :responses #testing
 
   resources :questions do
+    resources :votes
     resources :responses
     resources :answers do
       resources :responses
