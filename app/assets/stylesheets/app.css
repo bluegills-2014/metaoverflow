@@ -129,7 +129,10 @@ li {  list-style-type: none;}
   margin: 0 auto auto;
   padding: 10px;
   max-width: 400px;
+}
+form {
   border: 3px solid #ffffff;
+  padding: 5px;
   border-radius: 10px;
 }
 input, textarea, label {
