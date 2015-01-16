@@ -9,6 +9,10 @@
     <h5>
       Asked by <%= link_to question.user.username, question.user %> <%= format_date(question.posted_at) %>
     </h5>
-    Answers: <%= question.answers.count %> | Responses: <%= question.responses.count %>
+    Answers: <%= question.answers.count %> |
+    Responses: <%= question.responses.count %> |
+    Tags: <% question.tags.each do |tag| %>
+      <%= tag.word %>
+    <% end %>
   <% end %>
 </section>
