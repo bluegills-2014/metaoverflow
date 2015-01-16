@@ -78,6 +78,7 @@ ActiveRecord::Schema.define(version: 20150114215018) do
     t.text     "bio"
     t.string   "avatar"
     t.datetime "registered_at"
+    t.string   "slug"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

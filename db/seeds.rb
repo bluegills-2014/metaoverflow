@@ -3,7 +3,7 @@ require 'ffaker'
 # create users
 users = rand(5..15).times.map do
   User.create!({
-    username: Faker::Name.name,
+    username: Faker::Internet.user_name,
     password: "password",
     password_confirmation: "password",
     email: Faker::Internet.email,
