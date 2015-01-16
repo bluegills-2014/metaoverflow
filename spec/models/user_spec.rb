@@ -31,7 +31,7 @@ RSpec.describe User, :type => :model do
 
   describe "checks to param method" do
     let(:user) {User.new(username: "name")}
-    it "makes chances id to user name for route" do
+    it "makes changes id to user name for route" do
       expect(user.to_param).to eq(user.username)
     end
   end
