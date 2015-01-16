@@ -19,8 +19,8 @@
   <h2> <%= @user.questions.count%> ASKED QUESTIONS </h2>
   <ul>
   <% @user.questions.each do |question|%>
-    <li><h3><%= question.title %></li>
-    <li><%= question.votes.count %> votes</h3></li>
+    <li><h4><%= question.title %></li>
+    <li><%= question.votes.count %> votes</h4></li>
   <% end %>
   </ul>
 </div>
@@ -29,8 +29,7 @@
   <h2> <%= @user.answers.count%> ANSWERS GIVEN </h2>
   <ul>
   <% @user.answers.each do |answer|%>
-    <li><%= answer.question.title %>
-    <%= answer.votes.count %></li>
+    <li><h4><%= answer.question.title %></h4><%= answer.votes.count %> votes </li>
   <% end %>
   </ul>
 </div>
