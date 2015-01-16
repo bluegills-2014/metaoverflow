@@ -10,7 +10,8 @@
   <div id='site-wrapper'>
     <header>
       <%= link_to "Meta<br>over<br>flow".html_safe, root_path, class: 'site-title' %>
-      <nav>
+    </header>
+    <nav>
         <%= link_to 'Questions', questions_path %>
         <%= link_to 'Users', users_path  %>
         <% if current_user %>
@@ -22,9 +23,6 @@
         <hr>
         <%= link_to "Ask a<br> question".html_safe, new_question_path %>
       </nav>
-
-    </header>
-    <br>
     <div id="container">
       <%= yield %>
     </div>
