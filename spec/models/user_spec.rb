@@ -6,11 +6,11 @@ RSpec.describe User, :type => :model do
   describe "validate presence" do
     it { expect(user).to validate_presence_of(:username) }
     it { expect(user).to validate_presence_of(:email) }
-    it { expect(user).to validate_presence_of(:slug) }
   end
 
   describe "validate uniqueness" do
     it { expect(user).to validate_uniqueness_of(:username) }
+    it { expect(user).to validate_uniqueness_of(:slug) }
   end
 
   describe "checks associations" do
