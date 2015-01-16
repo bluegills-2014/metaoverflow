@@ -1,14 +1,11 @@
-<h1> User List </h1>
-
-<div id="user-list">
-
+<h1> Users </h1>
+<br>
+<div id="profile">
+  <ul>
   <% @users.each do |user| %>
-    <div class="user-box">
-      <%=  image_tag "pajama_man.jpg"%>
-      <ul>
-        <li><%= link_to user.username, user %></li>
-        <li><%= user.location %></li>
-      </ul>
-    </div>
+    <li><%= image_tag "pajama_man.jpg"%><br>
+    <%= link_to user.username, user %><br>
+    <%= user.location %></li>
   <% end %>
+  </ul>
 </div>

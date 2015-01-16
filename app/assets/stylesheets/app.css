@@ -19,23 +19,77 @@ h5 {
 p {
   margin: 8px 6px 6px 4px;
 }
+li {  list-style-type: none;}
+
 
 /* Nav bar */
 
 header {
   float: left;
-  margin: 6px 0 26px 0;
-  padding: 6px 20px 6px 20px;
+  /*margin: 6px 0 26px 0;*/
+  /*padding: 6px 20px 6px 20px;*/
   width: 100%;
-  border-top: 4px solid black;
-  border-bottom: 4px solid black;
+/*  border-top: 4px solid black;
+  border-bottom: 4px solid black;*/
+  position: fixed;
 }
+
+header h1 {
+  font-size: 2.5em;
+}
+
+header a {
+  color: black;
+  text-decoration: none;
+}
+
+header a:hover {
+  color: #0099CC;
+}
+
 header > nav {
   float: right;
-  padding: 10px 0 10px 0;
+  padding-right: 20px;
   text-align: right;
 }
 nav {
   margin: 0 auto auto;
   width: 75%;
 }
+
+nav li {
+  font-size: 1.25em;
+  line-height: 2em;
+}
+/* Body Container */
+
+#container {
+  margin-top: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 30px;
+  width: 70%;
+  background-color: #99EBFF;
+  border-radius: 10px;
+}
+
+#container a {
+  color: #001F29;
+  text-decoration: none;
+}
+
+#container a:hover {
+  color: #FF4D4D;
+}
+
+/* buttons */
+
+#but {
+  padding: 10px;
+  background-color: white;
+  font-size: 1.5em;
+  border-radius: 5px;
+  margin-bottom: 25px;
+  float: right;
+}
+
