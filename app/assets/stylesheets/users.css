@@ -16,8 +16,7 @@
   width: 100px;
 }
 
-/*single profile page*/
-
+/* single profile page */
 #user-pic img{
   width:  30%;
   border-radius: 10px;
@@ -34,5 +33,3 @@
   clear: both;
   border-top: 2px solid black;
 }
-
-.user-box {}

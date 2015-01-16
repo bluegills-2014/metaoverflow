@@ -1,15 +1,19 @@
 * {
-  font-family: Arial;
+  font-family: Helvetica;
   box-sizing: border-box;
 }
+
 #site-wrapper {
   margin: 0 auto auto;
   width: 50%;
   min-width: 940px;
 }
 section {
-  margin: 10px auto auto;
-  width: 75%;
+  margin: 0 auto auto;
+  padding: 10px;
+}
+h1, h2, h3, h4, h5, h6 {
+  margin: 4px 2px 4px 2px;
 }
 h1 {
   display: inline-block;
@@ -19,6 +23,9 @@ h1 {
 h5 {
   margin: 6px 4px 6px 4px;
   font-weight: normal;
+}
+a {
+  color: #000000;
 }
 p {
   margin: 8px 6px 6px 4px;
@@ -31,11 +38,14 @@ hr {
   margin: 0 auto 10px;
   padding: 0;
   width: 80%;
-  border: 1px solid #0083ff;
+  border: 1px solid #4ca5ff;
   text-align: center;
 }
 hr.after {
   content: "Test";
+}
+img {
+  display: block;
 }
 
 /* Header and Navigation */
@@ -59,7 +69,7 @@ nav > a, .site-title {
   text-decoration: none;
   text-transform: uppercase;
   font-weight: bold;
-  color: #0083ff;
+  color: #4ca5ff;
 }
 nav > a {
   font-size: 18px;
@@ -76,13 +86,15 @@ li {  list-style-type: none;}
   margin: 10px auto auto;
   padding: 10px;
   width: 72%;
-  min-height: 500px;
-  background-color: #0083ff;
+  min-height: 200px;
+  line-height: 25px;
+  background-color: #4ca5ff;
   border-radius: 10px;
+  box-shadow: 1px 1px 2px #bfbfbf;
 }
 
 #container a {
-  color: #001F29;
+  /*color: #001F29;*/
   text-decoration: none;
 }
 
@@ -103,11 +115,27 @@ li {  list-style-type: none;}
 /* Forms */
 .generic-form {
   margin: 0 auto auto;
+  padding: 10px;
+  max-width: 400px;
+  border: 3px solid #ffffff;
+  border-radius: 10px;
 }
 input, textarea, label {
-  margin: 10px;
+  margin: 5px auto auto;
   padding: 5px;
+  width: 100%;
   display: block;
+  border: none;
+  border-radius: 2px;
 }
-
+input, textarea {
+  /*text-transform: uppercase;*/
+  color: #000000;
+  font-weight: bold;
+  background-color: #ffffff;
+}
+textarea {
+  height: 100px;
+  font-weight: bold;
+}
 
