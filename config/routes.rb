@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   root 'questions#index'
 
+  # resources :responses #testing
 
   resources :questions do
     resources :responses
