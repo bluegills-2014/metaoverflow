@@ -10,7 +10,8 @@ class User < ActiveRecord::Base
   validates :slug, uniqueness: true, presence: true
   validates :email, presence: true
   validates_format_of :email,:with => /\A[^@\s]+@([^@\s]+\.)+[^@\s]+\z/
-  validates_format_of :username, :without => /[^!@#$%^&*()\s]/
+  # validates_format_of :username, :without => /[^!@#$%^&*()]/
+  validates_format_of :username, :without => /\s/
   has_secure_password
 
   before_create :create_slug

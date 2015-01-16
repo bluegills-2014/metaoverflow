@@ -31,7 +31,6 @@ RSpec.describe User, :type => :model do
     it { expect(user).to allow_value('username').for(:username) }
     it { expect(user).to_not allow_value('user name').for(:username) }
     it { expect(user).to_not allow_value(' ').for(:username) }
-    it { expect(user).to_not allow_value('user@name').for(:username) }
   end
 
   describe "checks for secure password" do
