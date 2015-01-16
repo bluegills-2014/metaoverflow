@@ -1,8 +1,9 @@
 <% content_for :title, "Questions Index" %>
 <nav>
-  <%= link_to "Ask a question", new_question_path %>
+  <%= link_to "ASK A QUESTION", new_question_path, id: 'but' %>
 </nav>
 <section id='show-questions-index'>
+  <h2>RECENT QUESTIONS </h2>
   <% @questions.each do |question| %>
     <h3><%= link_to question.title, question %></h3>
     <span><%= truncate_content(question, 200) %></span>

@@ -2,23 +2,35 @@
 <html>
 <head>
   <title><%= yield(:title) %></title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'application', media: 'all'%>
+  <%= javascript_include_tag 'application'%>
   <%= csrf_meta_tags %>
 </head>
 <body>
   <header>
+    <h1><a href="/">
+      META <br>
+      OVER <br>
+      FLOW <br>
+    </a></h1>
     <nav>
-      <%= image_tag "logo.png", class: 'header-image' %>
-      <%= link_to 'See latest questions', questions_path %>
-      <% if current_user %>
-      <% else %>
-        <%= link_to 'Login', '/login' %>
-        <%= link_to 'New User', new_user_path %>
-      <% end %>
+      <ul>
+        <%= image_tag "logo.png", class: 'header-image' %>
+        <li><%= link_to 'QUESTIONS', questions_path %></li>
+        <li><%= link_to 'USERS', users_path  %></li>
+        <% if current_user %>
+          <li><%= link_to('LOGOUT', logout_path)%></li>
+        <% else %>
+          <li><%= link_to_if(current_user.nil?, 'LOGIN', '/login') %></li>
+          <li><%= link_to_if current_user.nil?, 'NEWBS', new_user_path %></li>
+        <% end %>
+      </ul>
     </nav>
-  </header>
-  <%= yield %>
 
+  </header>
+  <br>
+  <div id="container">
+    <%= yield %>
+  </div>
   </body>
 </html>

@@ -2,13 +2,13 @@ require 'rails_helper'
 
 RSpec.describe UsersController, :type => :controller do
   describe "Get #index" do
-    before {get :index}
-    it{should render_template("users/index")}
+    let(:index) {get :index}
+    it{expect(index).to render_template("users/index")}
   end
 
   describe 'Get #new' do
-    before {get :new}
-    it{ should render_template('users/new')}
+    let(:new) {get :new}
+    it{ expect(new).to render_template('users/new')}
   end
 
   # describe 'Get #show' do

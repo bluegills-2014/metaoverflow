@@ -15,3 +15,7 @@ section.answers {
 .question-content {
   font-size: 20px;
 }
+
+#show-questions-index {
+  clear: both;
+}

@@ -1,6 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe Vote, :type => :model do
-    # it { should belong_to(:voteable)}
-    it { should belong_to(:user)}
+    let(:vote) {Vote.new}
+    it { expect(vote).to belong_to(:user)}
 end

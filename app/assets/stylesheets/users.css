@@ -2,20 +2,37 @@
   Place all the styles related to the matching controller here.
   They will automatically be included in application.css.
 */
-#user-list{
+/*#user-list{
   width: 95%;
+}*/
+
+#profile li {
+  display: inline-block;
+  margin: 15px;
+  width: 25%
 }
-.user-box{
-  width: 25%;
-}
-.user-box ul{
-  list-style-type: none;
-}
-.user-box img{
-  float: left;
+ img{
+  border-radius: 5px;
   width: 100px;
 }
 
-.user-profile img{
-  width:  200px;
+/*single profile page*/
+
+#user-pic img{
+  width:  30%;
+  border-radius: 10px;
+  float: left;
 }
+
+.user-profile {
+  width: 60%;
+  float: right;
+  margin-bottom: 50px;
+}
+
+#user-questions {
+  clear: both;
+  border-top: 2px solid black;
+}
+
+.user-box {}
