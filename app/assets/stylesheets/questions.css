@@ -15,3 +15,7 @@ section.answers {
 .question-content {
   font-size: 20px;
 }
+
+#response-link {
+  color: white;
+}

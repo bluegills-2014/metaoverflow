@@ -6,6 +6,7 @@
     <span><%= truncate_content(question, 200) %></span>
     <h5>
       Asked by <%= link_to question.user.username, question.user %> <%= format_date(question.posted_at) %>
+
     </h5>
     Answers: <%= question.answers.count %> |
     Responses: <%= question.responses.count %> |
