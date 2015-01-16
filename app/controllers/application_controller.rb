@@ -12,4 +12,8 @@ class ApplicationController < ActionController::Base
     current_user != nil
   end
   helper_method :logged_in?
+
+  def authenticate_user
+    redirect_to :back, alert: 'You are not logged in. Shame.' unless current_user
+  end
 end
