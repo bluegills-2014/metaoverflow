@@ -1,7 +1,7 @@
 class AnswersController < ApplicationController
   before_action :set_answer, only: [:show, :update, :destroy, :edit]
   before_action :set_question, only: [:new, :create]
-  before_action :authenticate_user, only: [:create]
+  before_action :authenticate_user, only: [:create, :new]
 
   def index
   end

@@ -85,6 +85,14 @@ nav > a:hover, .site-title:hover {
 
 li {  list-style-type: none;}
 
+/*Login Alert*/
+.alert-alert {
+  color: #B80000;
+  font-size: 25px;
+  text-align: center;
+  padding: 25px;
+}
+
 /* Body Container */
 #container {
   margin: 10px auto auto;
@@ -142,4 +150,5 @@ textarea {
   height: 100px;
   font-weight: bold;
 }
+
 
