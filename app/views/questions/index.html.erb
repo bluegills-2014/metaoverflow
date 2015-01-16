@@ -1,7 +1,5 @@
 <% content_for :title, "Questions Index" %>
-<nav>
-  <%= link_to "ASK A QUESTION", new_question_path, id: 'but' %>
-</nav>
+
 <section id='show-questions-index'>
   <h2>RECENT QUESTIONS </h2>
   <% @questions.each do |question| %>
