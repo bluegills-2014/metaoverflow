@@ -1,0 +1,38 @@
+<div class = "user-profile">
+  <h1> <%= @user.username %> </h1>
+  <div>
+    <%=  image_tag "pajama_man.jpg"%>
+  </div>
+  <div>
+    <ul>
+      <li> Location:<%= @user.location %> </li>
+      <li> Age: <%= @user.age %> </li>
+      <li> <%= @user.registered_at %> </li>
+    </ul>
+  </div>
+  <%= @user.bio %>
+</div>
+
+<div class = "user-questions">
+  <%= @user.questions.count%>
+  <ul>
+  <% @user.questions.each do |question|%>
+    <li><%= question.title %>
+    <%= question.votes.count %></li>
+  <% end %>
+  </ul>
+</div>
+
+<div class = "user-answers">
+  <%= @user.answers.count%>
+  <ul>
+  <% @user.answers.each do |answer|%>
+    <li><%= answer.question.title %>
+    <%= answer.votes.count %></li>
+  <% end %>
+  </ul>
+</div>
+
+<%= link_to 'Destory', @admin_user, method: :delete %>
+
+

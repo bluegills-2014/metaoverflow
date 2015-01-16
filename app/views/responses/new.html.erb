@@ -1,0 +1,6 @@
+<% if @answer %>
+  <%= content_for :title, "Responding to #{@question.title}" %>
+<% else %>
+  <%= content_for :title, "Responding to #{@question.title}" %>
+<% end %>
+<%= render 'form' %>

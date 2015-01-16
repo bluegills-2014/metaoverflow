@@ -1,0 +1,21 @@
+/*
+  Place all the styles related to the matching controller here.
+  They will automatically be included in application.css.
+*/
+section.question > ul, section.answers > ul {
+  list-style-type: square;
+}
+section.answers {
+  padding: 0 0 0 40px;
+}
+.response {
+  margin: 0 0 0 20px;
+  font-size: 14px;
+}
+.question-content {
+  font-size: 20px;
+}
+
+#response-link {
+  color: white;
+}

@@ -1,0 +1,36 @@
+  <div id="user-pic">
+    <%=  image_tag "pajama_man.jpg"%>
+  </div>
+
+<div class = "user-profile">
+  <h1> <%= @user.username %> </h1>
+
+  <div id="personal-info">
+    <ul>
+      <li>Location: <%= @user.location %></li>
+      <li>Age: <%= @user.age %></li>
+      <li><%= @user.registered_at %></li>
+    </ul>
+  </div>
+  <%= @user.bio %>
+</div>
+
+<div id="user-questions">
+  <h2><%= @user.questions.count%> ASKED QUESTIONS</h2>
+  <ul>
+  <% @user.questions.each do |question|%>
+    <li><h4><%= question.title %></li>
+    <li><%= question.votes.count %> votes</h4></li>
+  <% end %>
+  </ul>
+</div>
+
+<div id="user-answers">
+  <h2> <%= @user.answers.count%> ANSWERS GIVEN </h2>
+  <ul>
+  <% @user.answers.each do |answer|%>
+    <li><h4><%= answer.question.title %></h4><%= answer.votes.count %> votes </li>
+  <% end %>
+  </ul>
+</div>
+

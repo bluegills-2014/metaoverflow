@@ -1,0 +1,20 @@
+<section class='generic-section'>
+  <h2><%= yield(:title) %></h2>
+  <%= form_for [:admin,@user] do |f| %>
+    <%= f.label :username %>
+    <%= f.text_field :username %>
+    <%= f.label :email %>
+    <%= f.text_field :email%>
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+    <%= f.label :password, "Confirm password" %>
+    <%= f.password_field :password_confirmation %>
+    <%= f.label :location %>
+    <%= f.text_field :location, :placeholder => 'Optional' %>
+    <%= f.label :age %>
+    <%= f.text_field :age, :placeholder => 'Optional'  %>
+    <%= f.label :bio %>
+    <%= f.text_area :bio, :placeholder => 'Optional' %>
+    <%= f.submit %>
+  <% end %>
+</section>

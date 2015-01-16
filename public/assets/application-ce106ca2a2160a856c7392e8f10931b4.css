@@ -1,0 +1,232 @@
+/*
+  Place all the styles related to the matching controller here.
+  They will automatically be included in application.css.
+*/
+
+/*
+  Place all the styles related to the matching controller here.
+  They will automatically be included in application.css.
+*/
+
+* {
+  font-family: Helvetica;
+  box-sizing: border-box;
+}
+html {
+  overflow: scroll;
+}
+#site-wrapper {
+  margin: 0 auto auto;
+  width: 50%;
+  min-width: 940px;
+}
+section, section.question {
+  margin: 0 auto auto;
+  display: inline;
+  clear: none;
+  padding: 10px;
+}
+h1, h2, h3, h4, h5, h6 {
+  margin: 4px 2px 4px 2px;
+}
+h1 {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+}
+h5 {
+  margin: 6px 4px 6px 4px;
+  font-weight: normal;
+}
+a {
+  color: #000000;
+}
+p {
+  margin: 8px 6px 6px 4px;
+}
+body {
+  width: 100%;
+  height: 100%;
+}
+hr {
+  margin: 0 auto 10px;
+  padding: 0;
+  width: 80%;
+  border: 1px solid #4ca5ff;
+  text-align: center;
+}
+hr.after {
+  content: "Test";
+}
+img {
+  display: block;
+}
+
+/* Header and Navigation */
+nav, header {
+  display: inline;
+  float: right;
+}
+header {
+  z-index: 0;
+  position: fixed;
+}
+.site-title, nav > a, nav {
+  padding: 0 10px 10px 0;
+}
+.site-title {
+  float: left;
+  font-size: 42px;
+}
+nav > a, .site-title {
+  display: block;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #4ca5ff;
+}
+nav > a {
+  font-size: 18px;
+}
+nav > a:hover, .site-title:hover {
+  color: #0099CC;
+  text-decoration: underline;
+}
+
+li {  list-style-type: none;}
+
+/* Body Container */
+#container {
+  margin: 10px auto auto;
+  padding: 10px;
+  width: 72%;
+  min-height: 200px;
+  line-height: 25px;
+  background-color: #4ca5ff;
+  border-radius: 10px;
+  box-shadow: 1px 1px 2px #bfbfbf;
+}
+
+#container a {
+  /*color: #001F29;*/
+  text-decoration: none;
+}
+
+#container a:hover {
+  color: #FF4D4D;
+}
+
+/* buttons */
+#but {
+  padding: 10px;
+  background-color: white;
+  font-size: 1.5em;
+  border-radius: 5px;
+  margin-bottom: 25px;
+  float: right;
+}
+
+/* Forms */
+.generic-form {
+  margin: 0 auto auto;
+  padding: 10px;
+  max-width: 400px;
+  border: 3px solid #ffffff;
+  border-radius: 10px;
+}
+input, textarea, label {
+  margin: 5px auto auto;
+  padding: 5px;
+  width: 100%;
+  display: block;
+  border: none;
+  border-radius: 2px;
+}
+input, textarea {
+  /*text-transform: uppercase;*/
+  color: #000000;
+  font-weight: bold;
+  background-color: #ffffff;
+}
+textarea {
+  height: 100px;
+  font-weight: bold;
+}
+
+/*
+  Place all the styles related to the matching controller here.
+  They will automatically be included in application.css.
+*/
+
+section.question > ul, section.answers > ul {
+  list-style-type: square;
+}
+section.answers {
+  padding: 0 0 0 40px;
+}
+.response {
+  margin: 0 0 0 20px;
+  font-size: 14px;
+}
+.question-content {
+  font-size: 20px;
+}
+/*
+  Place all the styles related to the matching controller here.
+  They will automatically be included in application.css.
+*/
+/*#user-list{
+  width: 95%;
+}*/
+
+#profile li {
+  display: inline-block;
+  margin: 15px;
+  width: 25%
+}
+.user-pic {
+  border-radius: 5px;
+  width: 100px;
+}
+
+/* single profile page */
+#user-pic img{
+  width:  30%;
+  border-radius: 10px;
+  float: left;
+}
+
+.user-profile {
+  width: 60%;
+  float: right;
+  margin-bottom: 50px;
+}
+
+#user-questions {
+  clear: both;
+  border-top: 2px solid black;
+}
+.votes {
+  display: inline-block;
+}
+.upvoted {
+  color: #ff934c;
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+
+
+ */
+
+
+
