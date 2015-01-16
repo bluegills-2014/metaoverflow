@@ -11,7 +11,13 @@ class User < ActiveRecord::Base
 
   has_secure_password
 
+  before_create :create_slug
+
+  def create_slug
+    self.slug = username.gsub(/\W/,"_")
+  end
+
   def to_param
-    self.username
+    slug
   end
 end

@@ -6,9 +6,9 @@ RSpec.describe QuestionsController, :type => :controller do
     it{expect(index).to render_template("questions/index")}
   end
 
-  # describe 'GET#show' do
-  #   before {get :show}
-  #   it{should render_template("questions/show")}
-  # end
+  describe 'Get #new' do
+    let(:new) {get :new}
+    it{ expect(new).to render_template('questions/new')}
+  end
 
 end

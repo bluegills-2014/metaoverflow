@@ -9,6 +9,7 @@ class CreateUsers < ActiveRecord::Migration
       t.text :bio
       t.string :avatar
       t.datetime :registered_at
+      t.string :slug
 
       t.timestamps
     end
