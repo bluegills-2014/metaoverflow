@@ -1,6 +1,6 @@
 <section class='generic-form'>
   <h2><%= yield(:title) %></h2>
-  <%= form_for(@response) do |f| %>
+<%= form_for [@question, @answer, @response] do |f| %>
     <div class="fields">
       <%= f.label :content %>
       <%= f.text_area :content, placeholder: "Your Response" %>

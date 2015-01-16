@@ -1,7 +1,7 @@
 <% if @answer %>
-  <%= content_for :title, "Responding to #{@answer.question.user.username}" %>
+  <%= content_for :title, "Responding to #{@question.title}" %>
 <% else %>
   <%= content_for :title, "Responding to #{@question.title}" %>
 <% end %>
-
+<%= @question.title %>
 <%= render 'form' %>

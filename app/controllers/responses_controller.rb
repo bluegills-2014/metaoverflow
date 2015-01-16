@@ -1,6 +1,7 @@
 class ResponsesController < ApplicationController
-  before_action :set_question
   before_action :check_if_answer
+  before_action :set_question, only: [:edit, :new, :create, :destroy]
+
 
   def new
     @response = Response.new
@@ -27,7 +28,7 @@ class ResponsesController < ApplicationController
   private
 
   def check_if_answer
-    @answer = params[:answer_id] if params[:answer_id]
+    @answer = Answer.find(params[:answer_id]) if params[:answer_id]
   end
 
   def set_question
@@ -36,10 +37,9 @@ class ResponsesController < ApplicationController
 
   def params_answer
     if @answer
-      params.require(:answer).permit(:content).merge(respondable_id: @answer.id, respondable_type: 'Answer', user_id: current_user.id)
+      params.require(:response).permit(:content).merge(respondable_id: @answer.id, respondable_type: 'Answer', user_id: current_user.id)
     else
-      params.require(:answer).permit(:content).merge(respondable_id: @question.id,
-        respondable_type: 'Question', user_id: current_user.id)
+      params.require(:response).permit(:content).merge(respondable_id: @question.id, respondable_type: 'Question', user_id: current_user.id)
     end
   end
 end
