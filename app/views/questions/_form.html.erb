@@ -1,7 +1,13 @@
-<%= form_for(@question) do |f| %>
-  <%= f.label :title %>
-  <%= f.text_field :title, placeholder: "Question Title" %>
-  <%= f.label :content %>
-  <%= f.text_area :content, placeholder: "Your Question" %>
-  <%= f.submit "Ask" %>
-<% end %>
+<section class='generic-form'>
+  <%= form_for(@question) do |f| %>
+    <div class="fields">
+      <%= f.label :title %>
+      <%= f.text_field :title, placeholder: "Question Title" %>
+      <%= f.label :content %>
+      <%= f.text_area :content, placeholder: "Your Question" %>
+    </div>
+    <div class="buttons">
+      <%= f.submit "Ask" %>
+    </div>
+  <% end %>
+</section>
