@@ -24,9 +24,6 @@ RSpec.describe UsersController, :type => :controller do
         avatar: rand(1..10).to_s,
         registered_at: Faker::Time.date
         }}
-        context "User saves on create" do
-          it{expect(post :create, user: user).to change(User,:count).by(1)}
-        end
         context "redirect to new user" do
           it{expect(post :create, user: user).to redirect_to User.last}
         end
@@ -45,10 +42,6 @@ RSpec.describe UsersController, :type => :controller do
         avatar: rand(1..10).to_s,
         registered_at: Faker::Time.date
         }}
-
-        context "User does not saves on create with invalid attribude" do
-          it{expect(post :create, user:user).to_not change(User,:count).by(1)}
-        end
 
         context "rerednder new user form" do
           it{expect(post :create, user: user).to render_template('users/new')}
