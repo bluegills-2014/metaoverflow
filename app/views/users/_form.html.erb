@@ -1,35 +1,20 @@
-<%= form_for(@user) do |f| %>
-  <div class = "field">
-    <%= f.label :username %>
-    <%= f.text_field :username %>
-  </div>
-  <div class = "field">
-    <%= f.label :email %>
-    <%= f.text_field :email%>
-  </div>
-  <div class = "field">
-    <%= f.label :password %>
-    <%= f.password_field :password %>
-  </div>
-  <div class = "field">
-    <%= f.label :password, "Confirm password" %>
-    <%= f.password_field :password_confirmation %>
-  </div>
-  <div class = "field">
-    <%= f.label :location %>
-    <%= f.text_field :location, :placeholder => 'Optional' %>
-  </div>
-  <div class = "field">
-    <%= f.label :age %>
-    <%= f.text_field :age, :placeholder => 'Optional'  %>
-  </div>
-
-  <div class = "field">
-    <%= f.label :bio %>
-    <%= f.text_area :bio, :placeholder => 'Optional' %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+<section class='generic-form'>
+    <h2><%= yield(:title) %></h2>
+    <%= form_for(@user) do |f| %>
+        <%= f.label :username %>
+        <%= f.text_field :username %>
+        <%= f.label :email %>
+        <%= f.text_field :email%>
+        <%= f.label :password %>
+        <%= f.password_field :password %>
+        <%= f.label :password, "Confirm password" %>
+        <%= f.password_field :password_confirmation %>
+        <%= f.label :location %>
+        <%= f.text_field :location, :placeholder => 'Optional' %>
+        <%= f.label :age %>
+        <%= f.text_field :age, :placeholder => 'Optional'  %>
+        <%= f.label :bio %>
+        <%= f.text_area :bio, :placeholder => 'Optional' %>
+        <%= f.submit %>
+    <% end %>
+</section>

@@ -1,0 +1,12 @@
+<h2>
+  <%= @question.title + "?" %>
+</h2>
+Tagged: <% @question.tags.each do |tag| %>
+  <%= tag.word %>
+<% end %>
+<h4>
+  Asked by <%= link_to @question.user.username, @question.user %>, <%= format_date(@question.posted_at) %>
+</h4>
+<div>
+  <p class='question-content'><%= @question.content %></p>
+</div>

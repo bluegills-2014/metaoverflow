@@ -1,5 +1,12 @@
+<section class='generic-form'>
+  <h2><%= yield(:title) %></h2>
 <%= form_for [@question, @answer, @response] do |f| %>
-  <%= f.label :content %>
-  <%= f.text_area :content, placeholder: "Your Response" %>
-  <%= f.submit "Submit Response" %>
-<% end %>
+    <div class="fields">
+      <%= f.label :content %>
+      <%= f.text_area :content, placeholder: "Your Response" %>
+    </div>
+    <div class="actions">
+      <%= f.submit "Submit Response" %>
+    </div>
+  <% end %>
+</section>
