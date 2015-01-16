@@ -6,7 +6,12 @@
   width: 95%;
 }
 .user-box{
-  width: 25%;
+  display: box;
+  text-align: center;
+  float: left;
+  margin-right: none;
+  margin-left: none;
+  width: 15%;
 }
 .user-box ul{
   list-style-type: none;
