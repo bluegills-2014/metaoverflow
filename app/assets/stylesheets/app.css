@@ -2,14 +2,18 @@
   font-family: Helvetica;
   box-sizing: border-box;
 }
-
+html {
+  overflow: scroll;
+}
 #site-wrapper {
   margin: 0 auto auto;
   width: 50%;
   min-width: 940px;
 }
-section {
+section, section.question {
   margin: 0 auto auto;
+  display: inline;
+  clear: none;
   padding: 10px;
 }
 h1, h2, h3, h4, h5, h6 {
